@@ -1,0 +1,28 @@
+{
+  "name": "pg-1",
+  "version": "0.0.1",
+  "main": "server.js",
+  "type": "module",
+  "eslintConfig": {
+    "extends": [
+      "./node_modules/standard/eslintrc.json"
+    ]
+  },
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "pg": "^8.16.0"
+  },
+  "devDependencies": {
+    "standard": "^17.1.2"
+  },
+  "keywords": [],
+  "author": "",
+  "description": ""
+}
