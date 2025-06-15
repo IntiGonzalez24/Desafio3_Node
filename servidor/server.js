@@ -42,6 +42,28 @@ app.post("/posts", async (req, res) => {
   }
 })
 
+app.put("/posts/like/:id", async (req, res) => {
+  const { id } = req.params
+  try {
+    await pool.query("UPDATE posts SET likes = likes + 1 WHERE id = $1", [id])
+    res.json({ message: "Like agregado" })
+  } catch (error) {
+    console.error(error)
+    res.json({ error: "Error en like" })
+  }
+})
+
+app.delete("/posts/:id", async (req, res) => {
+  const { id } = req.params
+  try {
+    await pool.query("DELETE FROM posts WHERE id = $1", [id])
+    res.json({ message: "Post eliminado" })
+  } catch (error) {
+    console.error(error)
+    res.json({ error: "Error al eliminar el post" })
+  }
+})
+
 
 
 
